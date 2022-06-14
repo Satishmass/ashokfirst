@@ -10,7 +10,9 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="sample_gitFlow" doc:id="44fe50ae-1d10-492b-b43b-977170d6c681" >
 		<http:listener doc:name="Listener" doc:id="4deeafd4-b323-47bf-915a-5ee22eebdbde" config-ref="HTTP_Listener_config" path="/test"/>
 		<logger level="INFO" doc:name="Logger" doc:id="ca8992fb-37d6-408a-880d-83b23546a5dd" message="input"/>
-		<set-payload value='" Hai How R u"' doc:name="Set Payload" doc:id="004e9c31-3b7d-4a78-9ed6-fc589cadb69c" />
-		<logger level="INFO" doc:name="Logger" doc:id="6c44dd08-e93e-4491-8939-97fbd76eb843" message="#[payload]"/>
+		<set-payload value='" Hai How R u"' doc:name="Payload--1" doc:id="004e9c31-3b7d-4a78-9ed6-fc589cadb69c" />
+		<logger level="INFO" doc:name="Log1" doc:id="6c44dd08-e93e-4491-8939-97fbd76eb843" message="#[payload]"/>
+		<set-payload value='"Hello good Morning"' doc:name="Payload2" doc:id="2edbcab6-c3f9-4372-923c-9f5421ce0236" />
+		<logger level="INFO" doc:name="Log2" doc:id="134b2790-8688-4193-af83-82b74e87563c" message="#[payload]"/>
 	</flow>
 </mule>
